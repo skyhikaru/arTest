@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<script src="vendor/aframe/build/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="js/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
+	<br/>
+	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+	<!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
+	<a-scene embedded arjs='sourceType: webcam;'>
+		
+	   <a-assets>
+            <video id="video" autoplay preload="auto"  loop="true" src="a.mp4">
+             
+     	</a-assets>
+
+		<a-marker type='pattern' url='pat/ppc.pat'>
+				 <a-video src="#video" width="2" height="1" rotation="0  0" position="0 0 0"></a-video>
+
+		</a-marker>
+
+
+		<!--a-marker type='pattern' url='pat/ar2.pat'>
+				
+				<a-entity gltf-model-next="url(centurion/centurion.gltf)" scale="0.01 0.01 0.01"></a-entity>
+
+		</a-marker-->
+
+ <a-marker type='pattern' url='pat/ar2.pat'>
+      <!--Adding a glTF 2.0 model to your scene-->
+	<!--a-text value="Hello, World!"></a-text>
+ 	<a-entity obj-model="obj: url(3dmodle/raptor/source/couch.obj); mtl: url(3dmodle/raptor/source/couch.mtl)" rotation=0 45 0" scale="0.5 0.5 0.5"></a-entity-->
+		<a-text value="I am hungry!!!" position="0 1 0" rotation="0 90 0"></a-text>
+ 	  <a-entity gltf-model="url(3dmodle/raptor_gltf/scene.gltf)"  scale="0.08 0.08 0.08" ></a-entity>
+ 	  <!--a-entity light="type: directional; color: #FFF; intensity: 8" position="1 1 1"></a-entity-->
+    </a-marker>
+
+
+		    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
